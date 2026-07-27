@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios — Pablo Encina</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header p {
+      font-size: 1.15rem;
+      color: #a1a1aa;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Section titles */
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #60a5fa;
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    /* Services Grid */
+    .services-section {
+      margin-bottom: 80px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 16px;
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      border-color: #3f3f46;
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    .service-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: #a1a1aa;
+      margin-bottom: 16px;
+    }
+
+    .service-card .features {
+      list-style: none;
+      padding: 0;
+    }
+
+    .service-card .features li {
+      font-size: 0.82rem;
+      color: #71717a;
+      padding: 4px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .service-card .features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #60a5fa;
+      font-weight: 600;
+    }
+
+    .service-card .link {
+      display: inline-block;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .service-card .link:hover {
+      color: #93c5fd;
+    }
+
+    .service-card .link::after {
+      content: ' →';
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    .badge-blue {
+      background: rgba(96, 165, 250, 0.15);
+      color: #60a5fa;
+    }
+
+    .badge-purple {
+      background: rgba(167, 139, 250, 0.15);
+      color: #a78bfa;
+    }
+
+    .badge-green {
+      background: rgba(74, 222, 128, 0.15);
+      color: #4ade80;
+    }
+
+    .badge-orange {
+      background: rgba(251, 146, 60, 0.15);
+      color: #fb923c;
+    }
+
+    /* Icon backgrounds */
+    .icon-blue { background: rgba(96, 165, 250, 0.12); }
+    .icon-purple { background: rgba(167, 139, 250, 0.12); }
+    .icon-green { background: rgba(74, 222, 128, 0.12); }
+    .icon-orange { background: rgba(251, 146, 60, 0.12); }
+    .icon-red { background: rgba(248, 113, 113, 0.12); }
+    .icon-cyan { background: rgba(34, 211, 238, 0.12); }
+    .icon-yellow { background: rgba(250, 204, 21, 0.12); }
+
+    /* Coming soon */
+    .coming-soon {
+      position: relative;
+    }
+
+    .coming-soon::after {
+      content: 'PRÓXIMAMENTE';
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(251, 146, 60, 0.15);
+      color: #fb923c;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid #27272a;
+      margin: 60px 0;
+    }
+
+    /* About / Hero section */
+    .about-section {
+      margin-bottom: 80px;
+      text-align: center;
+    }
+
+    .about-card {
+      background: linear-gradient(135deg, #18181b 0%, #1e1b4b 100%);
+      border: 1px solid #312e81;
+      border-radius: 20px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .about-card .role {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #a78bfa;
+      margin-bottom: 16px;
+    }
+
+    .about-card h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .about-card .bio {
+      font-size: 1rem;
+      color: #a1a1aa;
+      max-width: 700px;
+      margin: 0 auto 28px;
+      line-height: 1.8;
+    }
+
+    .about-card .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .about-card .skill-tag {
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(96, 165, 250, 0.1);
+      color: #93c5fd;
+      border: 1px solid rgba(96, 165, 250, 0.2);
+    }
+
+    /* Custom services offer */
+    .custom-services {
+      margin-bottom: 80px;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .offer-item {
+      background: #18181b;
+      border: 1px solid #27272a;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .offer-item:hover {
+      border-color: #a78bfa;
+      transform: translateY(-2px);
+    }
+
+    .offer-item .offer-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .offer-item h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .offer-item p {
+      font-size: 0.82rem;
+      color: #71717a;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      margin: 60px 0;
+      padding: 48px 32px;
+      background: linear-gradient(135deg, #1e3a5f 0%, #1e1b4b 50%, #18181b 100%);
+      border-radius: 20px;
+      border: 1px solid #312e81;
+    }
+
+    .cta-section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      color: #a1a1aa;
+      font-size: 1rem;
+      margin-bottom: 28px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25d366;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .cta-btn:hover {
+      background: #22c55e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+    }
+
+    .cta-btn svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding-top: 40px;
+      border-top: 1px solid #27272a;
+    }
+
+    .footer p {
+      color: #71717a;
+      font-size: 0.85rem;
+    }
+
+    .footer .contact {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #a1a1aa;
+    }
+
+    /* Stats row */
+    .stats-row {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat .number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .stat .label {
+      font-size: 0.8rem;
+      color: #71717a;
+      margin-top: 4px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: #fff;
+        color: #1a1a1a;
+      }
+      .service-card {
+        background: #f9fafb;
+        border-color: #e5e7eb;
+        break-inside: avoid;
+      }
+      .service-card h3 { color: #1a1a1a; }
+      .header h1 {
+        -webkit-text-fill-color: #2563eb;
+        color: #2563eb;
+      }
+      .section-heading { color: #1a1a1a; }
+    }
+
+    @media (max-width: 768px) {
+      .page { padding: 40px 20px; }
+      .header h1 { font-size: 2.2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-row { gap: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <header class="header">
+      <h1>Pablo Encina</h1>
+      <p>Ingeniero en Informática &middot; Desarrollador Full Stack &middot; Emprendedor tecnológico</p>
+    </header>
+
+    <!-- About -->
+    <section class="about-section">
+      <div class="about-card">
+        <p class="role">Ingeniero en Informática &middot; Full Stack Developer</p>
+        <h2>Construyo lo que tu negocio necesita</h2>
+        <p class="bio">
+          Diseño, desarrollo y pongo en producción sistemas web y plataformas SaaS desde cero.
+          No uso plantillas genéricas — cada proyecto se construye a medida, pensado para resolver 
+          el problema real de tu negocio. Si puedes imaginarlo, yo puedo programarlo.
+        </p>
+        <div class="skills-row">
+          <span class="skill-tag">React / Next.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">AWS / Cloud</span>
+          <span class="skill-tag">APIs REST</span>
+          <span class="skill-tag">Integraciones</span>
+          <span class="skill-tag">UI/UX</span>
+          <span class="skill-tag">DevOps</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Services -->
+    <section class="custom-services">
+      <p class="section-title">Desarrollo a medida</p>
+      <h2 class="section-heading">¿Tienes una idea? La hago realidad.</h2>
+      <p style="color: #a1a1aa; font-size: 1rem; max-width: 650px; margin-bottom: 12px;">
+        Más allá de mis productos propios, trabajo directamente con empresas y emprendedores 
+        que necesitan soluciones digitales hechas a su medida. Sin límites de plantillas, 
+        sin funcionalidades que sobran, sin las que faltan.
+      </p>
+
+      <div class="offer-grid">
+        <div class="offer-item">
+          <div class="offer-icon">🌐</div>
+          <h4>Sitios Web a Medida</h4>
+          <p>Landing pages, sitios corporativos y e-commerce. Rápidos, modernos y optimizados para convertir.</p>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">🧠</div>
+          <h4>Sistemas SaaS</h4>
+          <p>Plataformas completas con login, panel admin, suscripciones y métricas. Tu idea convertida en producto.</p>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">🔌</div>
+          <h4>Integraciones y APIs</h4>
+          <p>Conecto tus sistemas: facturación, pagos, WhatsApp, CRM, ERP. Automatización real para tu operación.</p>
+        </div>
+        <div class="offer-item">
+          <div class="offer-icon">📱</div>
+          <h4>Apps Web Progresivas</h4>
+          <p>Aplicaciones que funcionan como nativas desde el navegador. Sin publicar en stores, acceso inmediato.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat">
+        <div class="number">7</div>
+        <div class="label">Servicios activos</div>
+      </div>
+      <div class="stat">
+        <div class="number">4</div>
+        <div class="label">Sitios web operativos</div>
+      </div>
+      <div class="stat">
+        <div class="number">3</div>
+        <div class="label">Plataformas SaaS</div>
+      </div>
+      <div class="stat">
+        <div class="number">2</div>
+        <div class="label">Proyectos en desarrollo</div>
+      </div>
+    </div>
+
+    <!-- Servicios Profesionales -->
+    <section class="services-section">
+      <p class="section-title">Servicios presenciales</p>
+      <h2 class="section-heading">Servicios Profesionales</h2>
+
+      <div class="services-grid">
+
+        <!-- ExpertosPintura -->
+        <div class="service-card">
+          <div class="icon icon-blue">🎨</div>
+          <span class="badge badge-blue">+500 proyectos</span>
+          <h3>ExpertosPintura.cl</h3>
+          <p>Pintura profesional de fachadas, interiores y condominios en Santiago. +30 años de trayectoria con materiales premium.</p>
+          <ul class="features">
+            <li>Presupuesto gratis en menos de 2 horas</li>
+            <li>Garantía por escrito</li>
+            <li>Precio fijo, sin sorpresas</li>
+            <li>Materiales Sherwin-Williams, Sipa, Tricolor</li>
+          </ul>
+          <a href="https://www.expertospintura.cl/" class="link" target="_blank">Visitar sitio</a>
+        </div>
+
+        <!-- GuardianTech -->
+        <div class="service-card">
+          <div class="icon icon-green">📹</div>
+          <span class="badge badge-green">Instalación en 24h</span>
+          <h3>GuardianTech.cl</h3>
+          <p>Instalación de cámaras de seguridad CCTV, control de acceso y video portero IP para casas, negocios y condominios.</p>
+          <ul class="features">
+            <li>Cámaras HD y 4K con visión nocturna</li>
+            <li>Monitoreo 24/7 desde el celular</li>
+            <li>Control de acceso RFID y huella</li>
+            <li>Video Portero IP con apertura remota</li>
+          </ul>
+          <a href="https://www.guardiantech.cl/" class="link" target="_blank">Visitar sitio</a>
+        </div>
+
+        <!-- Torre Security -->
+        <div class="service-card">
+          <div class="icon icon-red">🛡️</div>
+          <span class="badge badge-blue">Certificados OS-10</span>
+          <h3>TorreSecurity.cl</h3>
+          <p>Empresa de seguridad privada certificada OS-10. Guardias, conserjería, rondas, eventos y prevención de riesgos.</p>
+          <ul class="features">
+            <li>Personal 100% certificado OS-10</li>
+            <li>Supervisión 24/7 con prevencionista</li>
+            <li>Cobertura Región Metropolitana</li>
+            <li>Directiva de funcionamiento incluida</li>
+          </ul>
+          <a href="https://www.torresecurity.cl/" class="link" target="_blank">Visitar sitio</a>
+        </div>
+
+        <!-- Constructora Jireh -->
+        <div class="service-card">
+          <div class="icon icon-orange">🏗️</div>
+          <span class="badge badge-orange">Alto estándar</span>
+          <h3>ConstructoraJireh.cl</h3>
+          <p>Construcción de casas de alto estándar con acabados premium y diseño contemporáneo. Obra gruesa, terminaciones y piscinas.</p>
+          <ul class="features">
+            <li>Casas minimalistas con diseño moderno</li>
+            <li>Obra gruesa en hormigón armado</li>
+            <li>Terminaciones en porcelanato y mármol</li>
+            <li>Piscinas, quinchos y paisajismo</li>
+          </ul>
+          <a href="https://www.constructorajireh.cl/" class="link" target="_blank">Visitar sitio</a>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Sistemas SaaS -->
+    <section class="services-section">
+      <p class="section-title">Plataformas tecnológicas</p>
+      <h2 class="section-heading">Sistemas SaaS</h2>
+
+      <div class="services-grid">
+
+        <!-- Flexio -->
+        <div class="service-card">
+          <div class="icon icon-purple">⚡</div>
+          <span class="badge badge-purple">SaaS</span>
+          <h3>Flexio.cl</h3>
+          <p>Plataforma SaaS de gestión empresarial. Soluciones flexibles para optimizar operaciones de negocio.</p>
+          <ul class="features">
+            <li>Gestión operativa centralizada</li>
+            <li>Plataforma en la nube</li>
+            <li>Interfaz intuitiva</li>
+          </ul>
+          <a href="https://www.flexio.cl/" class="link" target="_blank">Visitar sitio</a>
+        </div>
+
+        <!-- VentaFlow -->
+        <div class="service-card">
+          <div class="icon icon-green">💰</div>
+          <span class="badge badge-green">Multi-sucursal</span>
+          <h3>VentaFlow.cl</h3>
+          <p>Sistema de gestión comercial para PYMES. Punto de venta, inventario y operación multi-local en una sola plataforma.</p>
+          <ul class="features">
+            <li>POS rápido con múltiples medios de pago</li>
+            <li>Inventario en tiempo real con alertas</li>
+            <li>Multi-sucursal nativo</li>
+            <li>WhatsApp integrado para clientes</li>
+            <li>60+ permisos configurables por rol</li>
+          </ul>
+          <a href="https://www.ventaflow.cl/" class="link" target="_blank">Visitar sitio</a>
+        </div>
+
+        <!-- Kiva360 -->
+        <div class="service-card">
+          <div class="icon icon-cyan">🎓</div>
+          <span class="badge badge-blue">Educación</span>
+          <h3>Kiva360.cl</h3>
+          <p>Gestión integral para jardines, preschool y colegios. Asistencia, evaluaciones, cobranzas y reporte diario desde el celular.</p>
+          <ul class="features">
+            <li>Asistencia digital con un click</li>
+            <li>Reporte diario del niño para apoderados</li>
+            <li>Cobranzas y pago online integrado</li>
+            <li>Portal de familias sin instalar apps</li>
+            <li>Desde $59.990/mes + IVA</li>
+          </ul>
+          <a href="https://www.kiva360.cl/" class="link" target="_blank">Visitar sitio</a>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- En Construcción -->
+    <section class="services-section">
+      <p class="section-title">Próximamente</p>
+      <h2 class="section-heading">Proyectos en Desarrollo</h2>
+
+      <div class="services-grid">
+
+        <div class="service-card coming-soon">
+          <div class="icon icon-yellow">💈</div>
+          <h3>Sistema SaaS para Barberías</h3>
+          <p>Plataforma de gestión especializada para barberías. Reservas, agenda, clientes, pagos y reportes en un solo lugar.</p>
+          <ul class="features">
+            <li>Agenda y reservas online</li>
+            <li>Gestión de barberos y turnos</li>
+            <li>Historial de clientes</li>
+            <li>Reportes de ingresos</li>
+          </ul>
+        </div>
+
+        <div class="service-card coming-soon">
+          <div class="icon icon-purple">📊</div>
+          <h3>Sistema Contable</h3>
+          <p>Software contable SaaS para PYMES chilenas. Facturación electrónica, libros contables y reportes tributarios.</p>
+          <ul class="features">
+            <li>Facturación electrónica SII</li>
+            <li>Libros de compra y venta</li>
+            <li>Reportes tributarios automáticos</li>
+            <li>Multi-empresa</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA WhatsApp -->
+    <section class="cta-section">
+      <h2>¿Conversamos?</h2>
+      <p>Cuéntame tu idea o proyecto. Te respondo personalmente, sin intermediarios, sin compromiso.</p>
+      <a href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20tus%20servicios" class="cta-btn" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escríbeme al WhatsApp
+      </a>
+      <p style="margin-top: 16px; font-size: 0.85rem; color: #71717a;">+56 9 4961 6038 · Respondo en menos de 2 horas</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2026 Pablo Encina — Ingeniero en Informática · Full Stack Developer</p>
+      <p class="contact">Santiago, Chile · <a href="https://wa.me/56949616038" style="color: #60a5fa; text-decoration: none;">+56 9 4961 6038</a></p>
+    </footer>
+
+  </div>
+</body>
+</html>
