@@ -26,7 +26,9 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Schema.org JSON-LD -->
+  <!-- AOS Animate on Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,7 +74,7 @@
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Navegación principal">
     <div class="navbar-inner">
-      <a href="index.html" class="navbar-logo" aria-label="Pablo Encina - Inicio">PE<span class="logo-dot">.</span></a>
+      <a href="index.html" class="navbar-logo" aria-label="Pablo Encina - Inicio">Pablo Encina</a>
       <button class="navbar-toggle" aria-label="Abrir menú" onclick="document.querySelector('.navbar-links').classList.toggle('open')">
         <span></span><span></span><span></span>
       </button>
@@ -111,21 +113,21 @@
   <div class="page">
 
     <!-- Social Proof / Stats -->
-    <section class="social-proof" aria-label="Resultados">
+    <section class="social-proof" aria-label="Resultados" data-aos="fade-up">
       <div class="proof-grid">
-        <div class="proof-item">
-          <span class="proof-number">7+</span>
+        <div class="proof-item" data-aos="zoom-in" data-aos-delay="0">
+          <span class="proof-number" data-countup="7">0</span><span class="proof-number">+</span>
           <span class="proof-label">Sistemas facturando en Chile</span>
         </div>
-        <div class="proof-item">
-          <span class="proof-number">4</span>
+        <div class="proof-item" data-aos="zoom-in" data-aos-delay="100">
+          <span class="proof-number" data-countup="4">0</span>
           <span class="proof-label">SaaS con usuarios pagando</span>
         </div>
-        <div class="proof-item">
-          <span class="proof-number">0</span>
+        <div class="proof-item" data-aos="zoom-in" data-aos-delay="200">
+          <span class="proof-number" data-countup="0">0</span>
           <span class="proof-label">Plantillas usadas</span>
         </div>
-        <div class="proof-item">
+        <div class="proof-item" data-aos="zoom-in" data-aos-delay="300">
           <span class="proof-number">24h</span>
           <span class="proof-label">Para tu propuesta</span>
         </div>
@@ -133,34 +135,34 @@
     </section>
 
     <!-- Pain points -->
-    <section class="section" id="problema">
+    <section class="section" id="problema" data-aos="fade-up">
       <div class="section-header">
         <span class="section-tag">El problema</span>
         <h2 class="section-heading">Si te identificas con esto, necesitas hablar conmigo</h2>
       </div>
 
       <div class="pain-grid">
-        <div class="pain-item">
+        <div class="pain-item" data-aos="fade-up" data-aos-delay="0">
           <span class="pain-icon">&#128548;</span>
           <p>Manejas tu negocio con Excel, WhatsApp y papeles sueltos</p>
         </div>
-        <div class="pain-item">
+        <div class="pain-item" data-aos="fade-up" data-aos-delay="100">
           <span class="pain-icon">&#128176;</span>
           <p>Pagaste por un sitio web que no genera ni una venta</p>
         </div>
-        <div class="pain-item">
+        <div class="pain-item" data-aos="fade-up" data-aos-delay="200">
           <span class="pain-icon">&#9203;</span>
           <p>Pierdes horas haciendo cosas que un sistema haría en segundos</p>
         </div>
-        <div class="pain-item">
+        <div class="pain-item" data-aos="fade-up" data-aos-delay="300">
           <span class="pain-icon">&#128274;</span>
           <p>Dependes de un "informático" que nunca está disponible</p>
         </div>
-        <div class="pain-item">
+        <div class="pain-item" data-aos="fade-up" data-aos-delay="400">
           <span class="pain-icon">&#128200;</span>
           <p>Tu competencia ya se digitalizó y tú sigues igual</p>
         </div>
-        <div class="pain-item">
+        <div class="pain-item" data-aos="fade-up" data-aos-delay="500">
           <span class="pain-icon">&#129300;</span>
           <p>Tienes una idea de producto SaaS pero no sabes cómo construirlo</p>
         </div>
@@ -171,14 +173,14 @@
 
     <!-- What I do -->
     <section class="section" id="que-hago">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-tag">La solución</span>
         <h2 class="section-heading">Un desarrollador senior, trabajando solo para ti</h2>
         <p class="section-desc">No soy una agencia con 15 personas cobrándote de más. Soy un ingeniero que programa, diseña y despliega. Hablas directo conmigo.</p>
       </div>
 
       <div class="features-grid">
-        <article class="feature-card">
+        <article class="feature-card" data-aos="fade-up" data-aos-delay="0" data-tilt data-tilt-max="8" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
           <div class="feature-icon icon-purple">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
@@ -215,7 +217,7 @@
     <hr class="divider">
 
     <!-- Portfolio -->
-    <section class="section" id="portafolio">
+    <section class="section" id="portafolio" data-aos="fade-up">
       <div class="section-header">
         <span class="section-tag">Prueba real</span>
         <h2 class="section-heading">No te muestro diseños bonitos. Te muestro negocios funcionando.</h2>
@@ -298,14 +300,14 @@
     <hr class="divider">
 
     <!-- Guarantees -->
-    <section class="section" id="garantias">
+    <section class="section" id="garantias" data-aos="fade-up">
       <div class="section-header">
         <span class="section-tag">Sin riesgo</span>
         <h2 class="section-heading">Lo que te garantizo antes de empezar</h2>
       </div>
 
       <div class="process-grid">
-        <div class="process-step">
+        <div class="process-step" data-aos="flip-left" data-aos-delay="0">
           <div class="process-number">&#128176;</div>
           <h4>Precio cerrado</h4>
           <p>Sabes exactamente cuánto cuesta antes de empezar. Sin sorpresas, sin costos extra. Si me paso del plazo, el costo lo absorbo yo.</p>
@@ -364,7 +366,7 @@
     <hr class="divider">
 
     <!-- CTA Final -->
-    <section class="cta-section">
+    <section class="cta-section" data-aos="zoom-in">
       <h2>Cada día sin sistema es un día perdiendo plata</h2>
       <p>Mientras sigues con Excel y WhatsApp, tu competencia está automatizando. Escríbeme y en 24 horas tienes una propuesta concreta para avanzar.</p>
       <a href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20quiero%20cotizar%20un%20sistema%20para%20mi%20negocio" class="cta-btn" target="_blank" rel="noopener">
@@ -378,7 +380,7 @@
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-brand">
-          <span class="footer-logo">PE<span class="logo-dot">.</span></span>
+          <span class="footer-logo">Pablo Encina</span>
           <p>Ingeniero en Informática · Full Stack Developer</p>
           <p>Santiago, Chile</p>
         </div>
@@ -406,6 +408,106 @@
   <a href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20necesito%20cotizar%20un%20proyecto" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <script>
+    // AOS init
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80
+    });
+
+    // Vanilla Tilt for feature cards
+    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+      max: 8,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.15
+    });
+
+    // GSAP Hero animations
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from('.hero-badge', { opacity: 0, y: -30, duration: 0.8, delay: 0.2 });
+    gsap.from('.hero h1', { opacity: 0, y: 40, duration: 1, delay: 0.4 });
+    gsap.from('.hero .subtitle', { opacity: 0, y: 30, duration: 0.8, delay: 0.7 });
+    gsap.from('.hero-buttons', { opacity: 0, y: 20, duration: 0.6, delay: 1 });
+    gsap.from('.hero-micro', { opacity: 0, duration: 0.6, delay: 1.2 });
+
+    // GSAP Navbar show on load
+    gsap.from('.navbar', { opacity: 0, y: -50, duration: 0.6, delay: 0.1 });
+
+    // CountUp animation
+    const countElements = document.querySelectorAll('[data-countup]');
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-countup'));
+          let current = 0;
+          const increment = target / 40;
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              el.textContent = target;
+              clearInterval(timer);
+            } else {
+              el.textContent = Math.floor(current);
+            }
+          }, 40);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    countElements.forEach(el => countObserver.observe(el));
+
+    // Typed.js for hero
+    if (document.querySelector('.gradient-text')) {
+      new Typed('.gradient-text', {
+        strings: ['¿Y tú?', '¿Cuánto más vas a esperar?', '¿Y tu negocio?'],
+        typeSpeed: 60,
+        backSpeed: 40,
+        backDelay: 2500,
+        loop: true,
+        showCursor: true,
+        cursorChar: '|'
+      });
+    }
+
+    // Parallax on hero
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const hero = document.querySelector('.hero');
+      if (hero) {
+        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+        hero.style.opacity = 1 - (scrolled / 700);
+      }
+    });
+
+    // GSAP scroll animations for portfolio cards
+    gsap.utils.toArray('.portfolio-card').forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: 'top 85%' },
+        opacity: 0, y: 60, duration: 0.6, delay: i * 0.1
+      });
+    });
+
+    // GSAP scroll animations for process steps
+    gsap.utils.toArray('.process-step').forEach((step, i) => {
+      gsap.from(step, {
+        scrollTrigger: { trigger: step, start: 'top 85%' },
+        opacity: 0, scale: 0.8, duration: 0.5, delay: i * 0.15
+      });
+    });
+  </script>
 
 </body>
 </html>
