@@ -3,27 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Servicios de Pablo Encina: desarrollo web a medida, plataformas SaaS, integraciones, pintura profesional, seguridad y más.">
+  <title>Servicios de Desarrollo Web y SaaS — Pablo Encina | Full Stack Chile</title>
+  <meta name="description" content="Servicios de desarrollo web, sistemas SaaS, integraciones API y apps a medida. Desarrollador Full Stack en Santiago, Chile. Cotiza sin compromiso.">
+  <meta name="keywords" content="servicios desarrollo web, crear sistema saas, desarrollador full stack chile, programador web santiago, integraciones api, app web progresiva, desarrollo a medida">
   <meta name="author" content="Pablo Encina">
-  <meta property="og:title" content="Servicios — Pablo Encina">
-  <meta property="og:description" content="Desarrollo web, SaaS, servicios presenciales y proyectos tecnológicos en Santiago, Chile.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://pabloencina.cl/servicios.html">
+
+  <meta property="og:title" content="Servicios — Pablo Encina | Desarrollador Full Stack">
+  <meta property="og:description" content="Desarrollo web a medida, SaaS, integraciones y apps. Sin plantillas, sin límites.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pabloencina.cl/servicios.html">
+  <meta property="og:locale" content="es_CL">
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="css/styles.css">
-  <title>Servicios — Pablo Encina</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Servicios de Desarrollo Web — Pablo Encina",
+    "description": "Servicios profesionales de desarrollo web, SaaS y tecnología",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "item": {"@type": "Service", "name": "Desarrollo de Sistemas SaaS", "description": "Plataformas multi-tenant con suscripciones, roles y panel admin."}},
+      {"@type": "ListItem", "position": 2, "item": {"@type": "Service", "name": "Desarrollo Web a Medida", "description": "Sitios corporativos, landing pages y e-commerce optimizados."}},
+      {"@type": "ListItem", "position": 3, "item": {"@type": "Service", "name": "Integraciones y APIs", "description": "Conexión de sistemas: pagos, facturación, WhatsApp, CRM."}},
+      {"@type": "ListItem", "position": 4, "item": {"@type": "Service", "name": "Apps Web Progresivas", "description": "Aplicaciones web que funcionan como nativas sin stores."}}
+    ]
+  }
+  </script>
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Navegación principal">
     <div class="navbar-inner">
-      <a href="index.html" class="navbar-logo">Pablo Encina</a>
-      <button class="navbar-toggle" aria-label="Abrir menú" onclick="document.querySelector('.navbar-links').classList.toggle('open')">&#9776;</button>
+      <a href="index.html" class="navbar-logo" aria-label="Pablo Encina - Inicio">PE<span class="logo-dot">.</span></a>
+      <button class="navbar-toggle" aria-label="Abrir menú" onclick="document.querySelector('.navbar-links').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="navbar-links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="servicios.html" class="active">Servicios</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20necesito%20cotizar%20un%20proyecto" class="nav-cta" target="_blank" rel="noopener">Cotizar Proyecto</a></li>
       </ul>
     </div>
   </nav>
@@ -32,237 +56,181 @@
 
     <!-- Header -->
     <header class="header">
-      <h1>Servicios</h1>
-      <p>Desarrollo a medida, plataformas SaaS y servicios presenciales profesionales.</p>
+      <span class="section-tag">Servicios profesionales</span>
+      <h1>Soluciones digitales que <span class="gradient-text">resuelven problemas reales</span></h1>
+      <p>Cada proyecto es diferente. Por eso no uso plantillas. Analizo tu problema, diseño la solución y la construyo desde cero.</p>
     </header>
 
-    <!-- Custom Services -->
-    <section class="custom-services">
-      <p class="section-title">Desarrollo a medida</p>
-      <h2 class="section-heading">¿Tienes una idea? La hago realidad.</h2>
-      <p style="color: #a1a1aa; font-size: 1rem; max-width: 650px; margin-bottom: 12px;">
-        Trabajo directamente con empresas y emprendedores que necesitan soluciones digitales 
-        hechas a su medida. Sin límites de plantillas, sin funcionalidades que sobran, sin las que faltan.
-      </p>
+    <!-- Servicios principales -->
+    <section class="section">
+      <div class="services-detail-grid">
 
-      <div class="offer-grid">
-        <div class="offer-item">
-          <div class="offer-icon">🌐</div>
-          <h4>Sitios Web a Medida</h4>
-          <p>Landing pages, sitios corporativos y e-commerce. Rápidos, modernos y optimizados para convertir.</p>
-        </div>
-        <div class="offer-item">
-          <div class="offer-icon">🧠</div>
-          <h4>Sistemas SaaS</h4>
-          <p>Plataformas completas con login, panel admin, suscripciones y métricas. Tu idea convertida en producto.</p>
-        </div>
-        <div class="offer-item">
-          <div class="offer-icon">🔌</div>
-          <h4>Integraciones y APIs</h4>
-          <p>Conecto tus sistemas: facturación, pagos, WhatsApp, CRM, ERP. Automatización real para tu operación.</p>
-        </div>
-        <div class="offer-item">
-          <div class="offer-icon">📱</div>
-          <h4>Apps Web Progresivas</h4>
-          <p>Aplicaciones que funcionan como nativas desde el navegador. Sin publicar en stores, acceso inmediato.</p>
-        </div>
+        <!-- SaaS -->
+        <article class="service-detail-card">
+          <div class="service-detail-header">
+            <div class="feature-icon icon-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h2>Sistemas SaaS</h2>
+          </div>
+          <p class="service-detail-desc">Construyo plataformas SaaS completas, listas para cobrar suscripciones y escalar. Multi-tenant, seguras y con panel de administración.</p>
+          <ul class="service-detail-features">
+            <li>Autenticación y roles de usuario avanzados</li>
+            <li>Suscripciones y pagos recurrentes integrados</li>
+            <li>Panel admin con métricas en tiempo real</li>
+            <li>Multi-tenant con datos aislados por cliente</li>
+            <li>API REST documentada y escalable</li>
+            <li>Deploy en cloud con CI/CD automatizado</li>
+          </ul>
+          <div class="service-detail-examples">
+            <span>Ejemplos reales:</span>
+            <a href="https://www.ventaflow.cl/" target="_blank" rel="noopener">VentaFlow</a>
+            <a href="https://www.kiva360.cl/" target="_blank" rel="noopener">Kiva360</a>
+            <a href="https://www.flexio.cl/" target="_blank" rel="noopener">Flexio</a>
+            <a href="https://www.re-booking.cl/" target="_blank" rel="noopener">Re-Booking</a>
+          </div>
+        </article>
+
+        <!-- Web a medida -->
+        <article class="service-detail-card">
+          <div class="service-detail-header">
+            <div class="feature-icon icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h2>Desarrollo Web a Medida</h2>
+          </div>
+          <p class="service-detail-desc">Sitios web que no solo se ven bien — convierten. Optimizados para SEO, velocidad y experiencia de usuario.</p>
+          <ul class="service-detail-features">
+            <li>Diseño responsive perfecto en todos los dispositivos</li>
+            <li>SEO técnico y on-page desde el primer día</li>
+            <li>Velocidad de carga optimizada (Core Web Vitals)</li>
+            <li>Formularios, cotizadores y chatbots integrados</li>
+            <li>Hosting y dominio configurado listo para operar</li>
+            <li>Google Analytics y seguimiento de conversiones</li>
+          </ul>
+          <div class="service-detail-examples">
+            <span>Ejemplos reales:</span>
+            <a href="https://www.expertospintura.cl/" target="_blank" rel="noopener">ExpertosPintura</a>
+            <a href="https://www.guardiantech.cl/" target="_blank" rel="noopener">GuardianTech</a>
+            <a href="https://www.torresecurity.cl/" target="_blank" rel="noopener">TorreSecurity</a>
+          </div>
+        </article>
+
+        <!-- Integraciones -->
+        <article class="service-detail-card">
+          <div class="service-detail-header">
+            <div class="feature-icon icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h2>Integraciones y APIs</h2>
+          </div>
+          <p class="service-detail-desc">Conecto sistemas que no se hablan entre sí. Automatizo procesos manuales y elimino la doble digitación.</p>
+          <ul class="service-detail-features">
+            <li>Integración con medios de pago (Transbank, MercadoPago, Stripe)</li>
+            <li>Facturación electrónica SII Chile</li>
+            <li>WhatsApp Business API automatizado</li>
+            <li>Conexión con CRM, ERP y software contable</li>
+            <li>Webhooks y sincronización en tiempo real</li>
+            <li>APIs REST y GraphQL custom</li>
+          </ul>
+        </article>
+
+        <!-- PWA -->
+        <article class="service-detail-card">
+          <div class="service-detail-header">
+            <div class="feature-icon icon-orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <h2>Apps Web Progresivas</h2>
+          </div>
+          <p class="service-detail-desc">Apps que se instalan desde el navegador sin pasar por stores. Funcionan offline, envían notificaciones y se sienten nativas.</p>
+          <ul class="service-detail-features">
+            <li>Instalable en celular sin App Store ni Play Store</li>
+            <li>Funciona offline con service workers</li>
+            <li>Notificaciones push para re-engagement</li>
+            <li>Acceso inmediato vía URL, sin descargas</li>
+            <li>Un solo código para web y móvil</li>
+            <li>Actualizaciones instantáneas sin re-publicar</li>
+          </ul>
+        </article>
+
       </div>
     </section>
 
     <hr class="divider">
 
-    <!-- Stats -->
-    <div class="stats-row">
-      <div class="stat">
-        <div class="number">7</div>
-        <div class="label">Servicios activos</div>
+    <!-- Por qué yo -->
+    <section class="section">
+      <div class="section-header">
+        <span class="section-tag">Diferencial</span>
+        <h2 class="section-heading">Por qué trabajar conmigo</h2>
       </div>
-      <div class="stat">
-        <div class="number">4</div>
-        <div class="label">Sitios web operativos</div>
-      </div>
-      <div class="stat">
-        <div class="number">3</div>
-        <div class="label">Plataformas SaaS</div>
-      </div>
-      <div class="stat">
-        <div class="number">2</div>
-        <div class="label">Proyectos en desarrollo</div>
-      </div>
-    </div>
 
-    <!-- Servicios Profesionales -->
-    <section class="services-section">
-      <p class="section-title">Servicios presenciales</p>
-      <h2 class="section-heading">Servicios Profesionales</h2>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="icon icon-blue">🎨</div>
-          <span class="badge badge-blue">+500 proyectos</span>
-          <h3>ExpertosPintura.cl</h3>
-          <p>Pintura profesional de fachadas, interiores y condominios en Santiago. +30 años de trayectoria con materiales premium.</p>
-          <ul class="features">
-            <li>Presupuesto gratis en menos de 2 horas</li>
-            <li>Garantía por escrito</li>
-            <li>Precio fijo, sin sorpresas</li>
-            <li>Materiales Sherwin-Williams, Sipa, Tricolor</li>
-          </ul>
-          <a href="https://www.expertospintura.cl/" class="link" target="_blank" rel="noopener">Visitar sitio</a>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-number">01</div>
+          <h4>Sin intermediarios</h4>
+          <p>Hablas directo conmigo. No hay project managers, vendedores ni capas entre tu idea y el que la programa.</p>
         </div>
-
-        <div class="service-card">
-          <div class="icon icon-green">📹</div>
-          <span class="badge badge-green">Instalación en 24h</span>
-          <h3>GuardianTech.cl</h3>
-          <p>Instalación de cámaras de seguridad CCTV, control de acceso y video portero IP para casas, negocios y condominios.</p>
-          <ul class="features">
-            <li>Cámaras HD y 4K con visión nocturna</li>
-            <li>Monitoreo 24/7 desde el celular</li>
-            <li>Control de acceso RFID y huella</li>
-            <li>Video Portero IP con apertura remota</li>
-          </ul>
-          <a href="https://www.guardiantech.cl/" class="link" target="_blank" rel="noopener">Visitar sitio</a>
+        <div class="why-item">
+          <div class="why-number">02</div>
+          <h4>Código propio</h4>
+          <p>No uso WordPress, Wix ni plantillas. Tu sistema es tuyo, con código limpio que puedes escalar o modificar.</p>
         </div>
-
-        <div class="service-card">
-          <div class="icon icon-red">🛡️</div>
-          <span class="badge badge-blue">Certificados OS-10</span>
-          <h3>TorreSecurity.cl</h3>
-          <p>Empresa de seguridad privada certificada OS-10. Guardias, conserjería, rondas, eventos y prevención de riesgos.</p>
-          <ul class="features">
-            <li>Personal 100% certificado OS-10</li>
-            <li>Supervisión 24/7 con prevencionista</li>
-            <li>Cobertura Región Metropolitana</li>
-            <li>Directiva de funcionamiento incluida</li>
-          </ul>
-          <a href="https://www.torresecurity.cl/" class="link" target="_blank" rel="noopener">Visitar sitio</a>
+        <div class="why-item">
+          <div class="why-number">03</div>
+          <h4>Productos propios en producción</h4>
+          <p>No soy solo un programador freelance. Tengo mis propios SaaS funcionando. Entiendo el negocio, no solo el código.</p>
         </div>
-
-        <div class="service-card">
-          <div class="icon icon-orange">🏗️</div>
-          <span class="badge badge-orange">Alto estándar</span>
-          <h3>ConstructoraJireh.cl</h3>
-          <p>Construcción de casas de alto estándar con acabados premium y diseño contemporáneo.</p>
-          <ul class="features">
-            <li>Casas minimalistas con diseño moderno</li>
-            <li>Obra gruesa en hormigón armado</li>
-            <li>Terminaciones en porcelanato y mármol</li>
-            <li>Piscinas, quinchos y paisajismo</li>
-          </ul>
-          <a href="https://www.constructorajireh.cl/" class="link" target="_blank" rel="noopener">Visitar sitio</a>
+        <div class="why-item">
+          <div class="why-number">04</div>
+          <h4>Precio justo, sin sorpresas</h4>
+          <p>Presupuesto cerrado antes de empezar. Sabes exactamente cuánto cuesta y qué incluye. Sin costos ocultos.</p>
         </div>
       </div>
     </section>
 
-    <hr class="divider">
-
-    <!-- Sistemas SaaS -->
-    <section class="services-section">
-      <p class="section-title">Plataformas tecnológicas</p>
-      <h2 class="section-heading">Sistemas SaaS</h2>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="icon icon-purple">⚡</div>
-          <span class="badge badge-purple">SaaS</span>
-          <h3>Flexio.cl</h3>
-          <p>Plataforma SaaS de gestión empresarial. Soluciones flexibles para optimizar operaciones de negocio.</p>
-          <ul class="features">
-            <li>Gestión operativa centralizada</li>
-            <li>Plataforma en la nube</li>
-            <li>Interfaz intuitiva</li>
-          </ul>
-          <a href="https://www.flexio.cl/" class="link" target="_blank" rel="noopener">Visitar sitio</a>
-        </div>
-
-        <div class="service-card">
-          <div class="icon icon-green">💰</div>
-          <span class="badge badge-green">Multi-sucursal</span>
-          <h3>VentaFlow.cl</h3>
-          <p>Sistema de gestión comercial para PYMES. Punto de venta, inventario y operación multi-local.</p>
-          <ul class="features">
-            <li>POS rápido con múltiples medios de pago</li>
-            <li>Inventario en tiempo real con alertas</li>
-            <li>Multi-sucursal nativo</li>
-            <li>WhatsApp integrado para clientes</li>
-            <li>60+ permisos configurables por rol</li>
-          </ul>
-          <a href="https://www.ventaflow.cl/" class="link" target="_blank" rel="noopener">Visitar sitio</a>
-        </div>
-
-        <div class="service-card">
-          <div class="icon icon-cyan">🎓</div>
-          <span class="badge badge-blue">Educación</span>
-          <h3>Kiva360.cl</h3>
-          <p>Gestión integral para jardines, preschool y colegios. Asistencia, evaluaciones, cobranzas y reporte diario.</p>
-          <ul class="features">
-            <li>Asistencia digital con un click</li>
-            <li>Reporte diario del niño para apoderados</li>
-            <li>Cobranzas y pago online integrado</li>
-            <li>Portal de familias sin instalar apps</li>
-            <li>Desde $59.990/mes + IVA</li>
-          </ul>
-          <a href="https://www.kiva360.cl/" class="link" target="_blank" rel="noopener">Visitar sitio</a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="divider">
-
-    <!-- En Construcción -->
-    <section class="services-section">
-      <p class="section-title">Próximamente</p>
-      <h2 class="section-heading">Proyectos en Desarrollo</h2>
-
-      <div class="services-grid">
-        <div class="service-card coming-soon">
-          <div class="icon icon-yellow">💈</div>
-          <h3>Sistema SaaS para Barberías</h3>
-          <p>Plataforma de gestión especializada para barberías. Reservas, agenda, clientes, pagos y reportes.</p>
-          <ul class="features">
-            <li>Agenda y reservas online</li>
-            <li>Gestión de barberos y turnos</li>
-            <li>Historial de clientes</li>
-            <li>Reportes de ingresos</li>
-          </ul>
-        </div>
-
-        <div class="service-card coming-soon">
-          <div class="icon icon-purple">📊</div>
-          <h3>Sistema Contable</h3>
-          <p>Software contable SaaS para PYMES chilenas. Facturación electrónica, libros contables y reportes tributarios.</p>
-          <ul class="features">
-            <li>Facturación electrónica SII</li>
-            <li>Libros de compra y venta</li>
-            <li>Reportes tributarios automáticos</li>
-            <li>Multi-empresa</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA WhatsApp -->
+    <!-- CTA -->
     <section class="cta-section">
-      <h2>¿Conversamos?</h2>
-      <p>Cuéntame tu idea o proyecto. Te respondo personalmente, sin intermediarios, sin compromiso.</p>
-      <a href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20tus%20servicios" class="cta-btn" target="_blank" rel="noopener">
+      <h2>¿Listo para empezar?</h2>
+      <p>Cuéntame qué necesitas y te envío una propuesta concreta en menos de 24 horas.</p>
+      <a href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20necesito%20cotizar%20un%20proyecto" class="cta-btn" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Escríbeme al WhatsApp
+        Cotizar mi proyecto
       </a>
-      <p style="margin-top: 16px; font-size: 0.85rem; color: #71717a;">+56 9 4961 6038 · Respondo en menos de 2 horas</p>
+      <p class="cta-sub">+56 9 4961 6038 · Sin compromiso</p>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-      <p>&copy; 2026 Pablo Encina — Ingeniero en Informática · Full Stack Developer</p>
-      <p class="contact">Santiago, Chile · <a href="https://wa.me/56949616038">+56 9 4961 6038</a></p>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">PE<span class="logo-dot">.</span></span>
+          <p>Ingeniero en Informática · Full Stack Developer</p>
+          <p>Santiago, Chile</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <a href="index.html">Inicio</a>
+          <a href="servicios.html">Servicios</a>
+          <a href="contacto.html">Contacto</a>
+        </div>
+        <div class="footer-links">
+          <h4>Servicios</h4>
+          <a href="servicios.html">Sistemas SaaS</a>
+          <a href="servicios.html">Desarrollo Web</a>
+          <a href="servicios.html">Integraciones</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pablo Encina. Todos los derechos reservados.</p>
+      </div>
     </footer>
 
   </div>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20tus%20servicios" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <a href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20necesito%20cotizar%20un%20proyecto" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
