@@ -57,16 +57,17 @@ img { max-width: 100%; height: auto; display: block; }
 
 .navbar-links {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   list-style: none;
   align-items: center;
 }
 
 .navbar-links a {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: #a1a1aa;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .navbar-links a:hover,
@@ -1113,4 +1114,179 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 768px) {
   .guarantees-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== CREA TU ... GRID ===== */
+.create-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.create-card {
+  position: relative;
+  padding: 36px 28px 32px;
+  border-radius: 16px;
+  background: linear-gradient(160deg, rgba(24, 24, 27, 0.9) 0%, rgba(30, 27, 75, 0.25) 100%);
+  border: 1px solid rgba(63, 63, 70, 0.45);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.create-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.create-card:hover::before { transform: scaleX(1); }
+
+.create-card:hover {
+  border-color: rgba(96, 165, 250, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.28);
+}
+
+.create-num {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgba(96, 165, 250, 0.55);
+  margin-bottom: 14px;
+}
+
+.create-card h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.create-card p {
+  font-size: 0.88rem;
+  color: #a1a1aa;
+  line-height: 1.7;
+}
+
+.create-cta {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.create-cta p {
+  font-size: 1rem;
+  color: #d4d4d8;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .create-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .create-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== FAQ ===== */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: rgba(24, 24, 27, 0.6);
+  border: 1px solid rgba(63, 63, 70, 0.4);
+  border-radius: 14px;
+  padding: 0 26px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover { border-color: rgba(96, 165, 250, 0.3); }
+
+.faq-item[open] {
+  background: rgba(30, 27, 75, 0.28);
+  border-color: rgba(96, 165, 250, 0.35);
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 22px 34px 22px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f4f4f5;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary:hover { color: #60a5fa; }
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #60a5fa;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  content: '\2212';
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-item p {
+  padding: 0 0 24px;
+  font-size: 0.92rem;
+  color: #a1a1aa;
+  line-height: 1.8;
+  border-top: 1px solid rgba(63, 63, 70, 0.3);
+  padding-top: 18px;
+  margin-top: -2px;
+}
+
+@media (max-width: 768px) {
+  .faq-item { padding: 0 20px; }
+  .faq-item summary { font-size: 0.94rem; padding: 18px 30px 18px 0; }
+}
+
+/* ===== HERO H1 FIT (texto animado) ===== */
+.hero h1 {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero h1 .gradient-text { white-space: nowrap; }
+
+.typed-cursor {
+  color: #a78bfa;
+  font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+  .hero h1 { font-size: 3rem; letter-spacing: -1.8px; }
+}
+
+@media (max-width: 560px) {
+  .hero h1 { font-size: 1.9rem; letter-spacing: -1px; }
+  .hero h1 .gradient-text { white-space: normal; }
 }
