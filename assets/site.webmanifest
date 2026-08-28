@@ -1,0 +1,25 @@
+{
+  "name": "Pablo Encina",
+  "short_name": "P. Encina",
+  "theme_color": "#0A0A0B",
+  "background_color": "#0A0A0B",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icono-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

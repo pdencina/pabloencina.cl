@@ -7,7 +7,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #09090b;
+  background: #0A0A0B;
   color: #f4f4f5;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +28,7 @@ img { max-width: 100%; height: auto; display: block; }
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(9, 9, 11, 0.8);
+  background: rgba(10, 10, 11, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(63, 63, 70, 0.4);
@@ -44,16 +44,19 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .navbar-logo {
-  font-size: 1.2rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.25s ease;
 }
 
-.logo-dot { color: #60a5fa; }
+.navbar-logo:hover { opacity: 0.8; }
+
+.navbar-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
 
 .navbar-links {
   display: flex;
@@ -112,7 +115,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ===== GRADIENT TEXT ===== */
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+  background: linear-gradient(135deg, #60A5FA, #818CF8, #C084FC, #F0ABFC);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -869,14 +872,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .footer-logo {
-  font-size: 1.3rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 12px;
+  height: 48px;
+  width: auto;
   display: block;
+  margin-bottom: 16px;
 }
 
 .footer-brand p {
@@ -962,7 +961,7 @@ img { max-width: 100%; height: auto; display: block; }
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(9, 9, 11, 0.95);
+    background: rgba(10, 10, 11, 0.96);
     backdrop-filter: blur(16px);
     flex-direction: column;
     padding: 24px;
@@ -1289,4 +1288,17 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 560px) {
   .hero h1 { font-size: 1.9rem; letter-spacing: -1px; }
   .hero h1 .gradient-text { white-space: normal; }
+}
+
+/* ===== ANCLAS BAJO NAVBAR FIJO ===== */
+section[id] { scroll-margin-top: 100px; }
+
+/* ===== LOGO RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar-logo img { height: 34px; }
+  .footer-logo { height: 42px; margin-left: auto; margin-right: auto; }
+}
+
+@media (max-width: 400px) {
+  .navbar-logo img { height: 30px; }
 }
