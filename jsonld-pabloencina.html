@@ -1,0 +1,212 @@
+<!--
+  DATOS ESTRUCTURADOS — pabloencina.cl
+  Pegar justo antes de </head> en index.html
+
+  ANTES DE SUBIR, revisa lo marcado con  <<< REVISAR
+  Valida en: https://validator.schema.org y https://search.google.com/test/rich-results
+-->
+
+<!-- 1. Negocio / servicio profesional. Va SOLO en la home. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://www.pabloencina.cl/#negocio",
+  "name": "Pablo Encina — Desarrollo Web y Sistemas a Medida",
+  "description": "Desarrollo de páginas web, sistemas de gestión y plataformas SaaS a medida en Chile. Código propio con React, Next.js, Node.js y PostgreSQL. Sin plantillas.",
+  "url": "https://www.pabloencina.cl/",
+  "image": "https://www.pabloencina.cl/assets/og-image.png",
+  "logo": "https://www.pabloencina.cl/assets/logo-horizontal-oscuro.png",
+  "telephone": "+56949616038",
+  "priceRange": "$$",
+  "currenciesAccepted": "CLP",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santiago",
+    "addressRegion": "Región Metropolitana",
+    "addressCountry": "CL"
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Chile" },
+    { "@type": "AdministrativeArea", "name": "Región Metropolitana" }
+  ],
+  "founder": { "@id": "https://www.pabloencina.cl/#pablo" },
+  "sameAs": [
+    "https://www.linkedin.com/in/TU-USUARIO",
+    "https://github.com/pdencina"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "ventas",
+    "telephone": "+56949616038",
+    "availableLanguage": ["es"]
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de desarrollo",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Desarrollo de páginas web a medida",
+          "description": "Sitios corporativos y landing pages construidos con código propio, optimizados para velocidad y conversión."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Sistemas de gestión a medida",
+          "description": "Software con procesos, roles, permisos y reportes adaptados a la operación del negocio."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Plataformas SaaS",
+          "description": "Productos multi-tenant con registro de usuarios, suscripciones, pagos recurrentes y panel de administración."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Tiendas online",
+          "description": "E-commerce con medios de pago chilenos, control de stock y gestión de despachos."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Integraciones y automatizaciones",
+          "description": "Conexión de pagos, facturación SII, WhatsApp, CRM y ERP mediante APIs."
+        }
+      }
+    ]
+  }
+}
+</script>
+
+<!-- 2. Persona. Alimenta el panel de conocimiento cuando alguien busca tu nombre. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.pabloencina.cl/#pablo",
+  "name": "Pablo Encina",
+  "jobTitle": "Ingeniero en Informática y Desarrollador Full Stack",
+  "url": "https://www.pabloencina.cl/",
+  "image": "https://www.pabloencina.cl/assets/og-image.png",
+  "telephone": "+56949616038",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Santiago",
+    "addressCountry": "CL"
+  },
+  "knowsAbout": [
+    "Desarrollo web a medida",
+    "Plataformas SaaS",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "Integración de APIs",
+    "Facturación electrónica SII"
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/TU-USUARIO",
+    "https://github.com/pdencina"
+  ]
+}
+</script>
+
+<!-- 3. Sitio web -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.pabloencina.cl/#sitio",
+  "url": "https://www.pabloencina.cl/",
+  "name": "Pablo Encina",
+  "inLanguage": "es-CL",
+  "publisher": { "@id": "https://www.pabloencina.cl/#negocio" }
+}
+</script>
+
+<!-- 4. Preguntas frecuentes. Google casi no muestra resultados enriquecidos de FAQ
+     desde 2023, pero le ayuda a entender de qué trata la página. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta crear una página web a medida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del alcance. Una landing page no cuesta lo mismo que un sistema de gestión con usuarios y reportes. El trabajo es con presupuesto cerrado: en 24 horas recibes el valor exacto, sin costos ocultos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo toma crear una página web o sistema?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una página web profesional toma entre 1 y 3 semanas. Un sistema de gestión o plataforma SaaS, entre 4 y 12 semanas según la complejidad. El plazo queda por escrito en la propuesta antes de empezar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede crear un sistema para un negocio muy específico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Hay sistemas construidos para retail, jardines infantiles, reservas de horas y empresas de servicios. Si el negocio se puede explicar, el software que lo maneja se puede construir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se usa WordPress o plantillas prefabricadas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Todo se construye con código propio usando React, Next.js, Node.js y PostgreSQL. La web carga más rápido, es más segura y puede crecer sin límites de plugins ni licencias mensuales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Incluye dominio, hosting y correo corporativo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Se entrega todo configurado y funcionando: dominio, hosting, certificado SSL, correos con dominio propio y Google Analytics."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede crear la web sin tener logo ni textos listos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Muchos clientes llegan solo con la idea. Se propone la estructura, se redactan los textos orientados a venta y se arma el diseño. El cliente solo revisa y aprueba."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se trabaja con clientes fuera de Santiago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, de forma remota con clientes en todo Chile y Latinoamérica. La comunicación es por WhatsApp y videollamada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si después quiero agregar funciones nuevas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El código fuente es del cliente. Agregar funciones es directo, y puede hacerlo el mismo desarrollador o el equipo interno del cliente. No hay dependencia de un solo proveedor."
+      }
+    }
+  ]
+}
+</script>

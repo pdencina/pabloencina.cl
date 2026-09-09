@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>¿Por Qué Mis Correos Llegan a Spam? Causas y Solución Real</title>
+<meta name="description" content="Tus correos caen en spam casi siempre por una razón: faltan SPF, DKIM y DMARC en tu dominio. Qué son, cómo revisarlos y cómo dejar de perder cotizaciones.">
+<meta name="keywords" content="mis correos llegan a spam, correos van a spam solucion, configurar spf dkim dmarc, correo corporativo cae en spam, por que gmail manda mis correos a spam, autenticacion de correo dominio">
+<link rel="canonical" href="https://www.pabloencina.cl/por-que-mis-correos-llegan-a-spam.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Pablo Encina">
+<meta name="theme-color" content="#0A0A0B">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Pablo Encina">
+<meta property="og:url" content="https://www.pabloencina.cl/por-que-mis-correos-llegan-a-spam.html">
+<meta property="og:title" content="¿Por Qué Mis Correos Llegan a Spam? Causas y Solución Real">
+<meta property="og:description" content="La causa técnica detrás de los correos que nadie recibe, y los pasos concretos para arreglarlo.">
+<meta property="og:image" content="https://www.pabloencina.cl/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<style>
+  :root{
+    --bg:#0A0A0B;
+    --surface:#131316;
+    --line:#26262B;
+    --text:#E8E8EA;
+    --muted:#9A9AA3;
+    --accent:#60A5FA;
+    --accent-soft:rgba(96,165,250,.10);
+    --max:68ch;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:48px 22px 90px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+  .back{color:var(--muted);font-size:15px}
+  h1{font-size:clamp(28px,6vw,42px);line-height:1.15;letter-spacing:-.02em;margin:28px 0 14px;font-weight:700}
+  h2{font-size:clamp(21px,4.4vw,27px);line-height:1.25;letter-spacing:-.01em;margin:52px 0 14px;font-weight:650}
+  h3{font-size:19px;margin:32px 0 8px;font-weight:600}
+  p{margin:0 0 18px}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:34px}
+  .lead{font-size:19px;color:#C9C9D0}
+
+  table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px}
+  caption{caption-side:bottom;color:var(--muted);font-size:13.5px;text-align:left;padding-top:10px}
+  th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:14px}
+
+  code{
+    background:var(--surface);border:1px solid var(--line);border-radius:5px;
+    padding:2px 6px;font-size:14.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    color:#C9C9D0;word-break:break-word;
+  }
+  pre{
+    background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;overflow-x:auto;margin:20px 0;font-size:14.5px;
+  }
+  pre code{background:none;border:0;padding:0}
+
+  blockquote{
+    margin:26px 0;padding:16px 20px;border-left:3px solid var(--accent);
+    background:var(--accent-soft);color:#D6D6DC;border-radius:0 6px 6px 0;
+  }
+  blockquote p{margin:0}
+
+  ul,ol{padding-left:20px;margin:0 0 18px}
+  li{margin-bottom:9px}
+
+  .cta{
+    margin:56px 0 0;padding:28px 24px;background:var(--surface);
+    border:1px solid var(--line);border-radius:12px;
+  }
+  .cta h2{margin-top:0}
+  .btn{
+    display:inline-block;margin-top:6px;padding:14px 24px;border-radius:8px;
+    background:var(--accent);color:#0A0A0B;font-weight:650;text-decoration:none;
+  }
+  .btn:hover{text-decoration:none;filter:brightness(1.08)}
+  .fine{color:var(--muted);font-size:14px;margin:14px 0 0}
+
+  hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<article class="wrap">
+
+  <a class="back" href="/">← Volver al inicio</a>
+
+  <h1>¿Por qué mis correos llegan a spam?</h1>
+
+  <p class="meta">Actualizado en septiembre de 2026 — 7 minutos de lectura</p>
+
+  <p class="lead">Enviaste la cotización, pasaron tres días y el cliente te dice que nunca le llegó. Está en su carpeta de spam. No es mala suerte ni un problema de tu computador: en la gran mayoría de los casos es un problema de configuración de tu dominio que se arregla una vez y no vuelve a molestar.</p>
+
+  <h2>La razón principal: nadie puede comprobar que el correo es tuyo</h2>
+
+  <p>Gmail, Outlook y todos los servicios grandes reciben una cantidad enorme de correo falso. Para defenderse, antes de mostrar un mensaje se preguntan algo simple: <strong>¿quien dice enviar esto realmente tiene permiso para hacerlo?</strong></p>
+
+  <p>Esa pregunta se responde con tres registros que viven en el DNS de tu dominio. Si no están, el servidor que recibe no tiene forma de verificar nada, así que aplica la regla más segura para su usuario: mandarlo a spam.</p>
+
+  <table>
+    <caption>Los tres registros de autenticación de correo, explicados sin tecnicismos.</caption>
+    <thead>
+      <tr><th>Registro</th><th>Qué hace</th><th>La analogía</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>SPF</strong></td>
+        <td>Declara qué servidores tienen permiso para enviar correo usando tu dominio.</td>
+        <td>La lista de invitados en la puerta.</td>
+      </tr>
+      <tr>
+        <td><strong>DKIM</strong></td>
+        <td>Firma cada correo con una clave criptográfica para probar que nadie lo alteró en el camino.</td>
+        <td>El sello de cera en el sobre.</td>
+      </tr>
+      <tr>
+        <td><strong>DMARC</strong></td>
+        <td>Le dice al servidor que recibe qué hacer si las verificaciones fallan, y te envía reportes.</td>
+        <td>La instrucción al guardia: dejar pasar, revisar o rechazar.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <blockquote>
+    <p>Los tres trabajan juntos. Tener SPF pero no DKIM deja tus correos en una zona gris donde algunos llegan y otros no, lo que es peor que un problema evidente porque nunca sabes cuáles se perdieron.</p>
+  </blockquote>
+
+  <h2>Cómo saber si tu dominio los tiene</h2>
+
+  <p>La forma más rápida sin instalar nada:</p>
+
+  <ol>
+    <li>Envía un correo desde tu casilla corporativa a una cuenta de Gmail tuya.</li>
+    <li>Ábrelo en Gmail desde el computador, entra al menú de los tres puntos y elige <em>Mostrar original</em>.</li>
+    <li>Arriba vas a ver tres líneas: SPF, DKIM y DMARC. Cada una debe decir <code>PASS</code>.</li>
+  </ol>
+
+  <p>Si alguna dice <code>FAIL</code>, <code>SOFTFAIL</code> o simplemente no aparece, ahí está tu problema. También puedes revisarlo en herramientas gratuitas como <a href="https://www.mail-tester.com/" rel="nofollow noopener" target="_blank">mail-tester.com</a>, que te da un puntaje de 0 a 10 y te dice exactamente qué falta.</p>
+
+  <h2>Las otras causas, en orden de frecuencia</h2>
+
+  <h3>1. El formulario de tu web envía el correo mal</h3>
+
+  <p>Este es el error más común y el más difícil de detectar. Cuando alguien llena el formulario de contacto, muchos sitios envían el correo poniendo como remitente la dirección del visitante. Es decir, tu servidor intenta enviar un correo diciendo que viene de <code>cliente@gmail.com</code>, sin tener ningún permiso de Gmail para hacerlo.</p>
+
+  <p>El resultado es una falla de autenticación inmediata. La solución correcta es que el correo salga desde tu propio dominio y que la dirección del visitante vaya en el campo <code>Reply-To</code>, así puedes responderle con un clic pero el envío queda validado.</p>
+
+  <h3>2. Estás usando el correo del hosting compartido</h3>
+
+  <p>Los planes de hosting básicos incluyen casillas de correo, y ahí está la trampa: tu correo sale desde la misma dirección IP que cientos de otros sitios. Si uno de esos vecinos envía spam, la IP queda con mala reputación y tus correos legítimos pagan el costo. No hay configuración que arregle esto, hay que separar el correo del hosting.</p>
+
+  <h3>3. Tu dominio es muy nuevo</h3>
+
+  <p>Un dominio registrado la semana pasada no tiene historial, y los filtros desconfían de lo desconocido. Esto se resuelve solo con el tiempo, enviando volúmenes normales. Lo que sí lo empeora es comprar el dominio y de inmediato enviar cien correos: eso se ve exactamente igual que una campaña de spam.</p>
+
+  <h3>4. El contenido del correo dispara alarmas</h3>
+
+  <p>Escribir todo en mayúsculas, llenar el asunto de signos de exclamación, usar palabras como "gratis", "urgente" o "gana dinero", enviar un correo que es solo una imagen sin texto, o incluir enlaces acortados tipo bit.ly. Ninguno de estos por sí solo te manda a spam, pero sumados con una autenticación débil terminan de convencer al filtro.</p>
+
+  <h3>5. Te reportaron o rebotaste demasiado</h3>
+
+  <p>Si enviaste a una lista de contactos comprada o muy antigua, vas a tener muchos rebotes y algunos reportes de spam. Eso queda registrado contra tu dominio y afecta también a tus correos uno a uno. Las listas compradas no son un atajo, son una forma de quemar tu dominio.</p>
+
+  <h2>Cómo se arregla, paso a paso</h2>
+
+  <ol>
+    <li><strong>Revisa qué tienes hoy.</strong> Con el método de <em>Mostrar original</em> sabes de inmediato cuál de los tres registros falta.</li>
+    <li><strong>Configura SPF.</strong> Un registro TXT en el dominio que autorice a tu proveedor de correo. Va uno solo: si tienes dos registros SPF, ambos se invalidan y quedas peor que sin ninguno.</li>
+    <li><strong>Activa DKIM.</strong> Se genera en el panel de tu proveedor de correo y se publica como registro TXT o CNAME en el DNS.</li>
+    <li><strong>Publica DMARC.</strong> Empieza en modo observación con <code>p=none</code> para recibir reportes sin bloquear nada, y solo después endurece la política.</li>
+    <li><strong>Saca el correo del hosting compartido</strong> si estás en ese caso.</li>
+    <li><strong>Arregla el formulario de la web</strong> para que envíe desde tu dominio con <code>Reply-To</code>.</li>
+    <li><strong>Vuelve a medir.</strong> Envía otra prueba y confirma que los tres digan PASS.</li>
+  </ol>
+
+  <p>Un ejemplo de cómo se ve un registro SPF publicado para Google Workspace:</p>
+
+  <pre><code>Tipo: TXT
+Nombre: @
+Valor: v=spf1 include:_spf.google.com ~all</code></pre>
+
+  <p>Y un DMARC en modo observación, que es por donde siempre conviene partir:</p>
+
+  <pre><code>Tipo: TXT
+Nombre: _dmarc
+Valor: v=DMARC1; p=none; rua=mailto:reportes@tudominio.cl</code></pre>
+
+  <h2>Cuánto demora en verse el efecto</h2>
+
+  <p>Los cambios en el DNS se propagan entre 15 minutos y 24 horas, aunque normalmente son mucho más rápidos. La autenticación empieza a funcionar de inmediato una vez propagado.</p>
+
+  <p>La reputación es otra historia. Si tu dominio venía siendo marcado como spam hace meses, recuperar la confianza toma entre dos y cuatro semanas de envíos normales. No hay forma de acelerarlo, y cualquiera que te prometa lo contrario te está vendiendo humo.</p>
+
+  <h2>Lo que esto te está costando</h2>
+
+  <p>Vale la pena poner el problema en su tamaño real. Si envías veinte cotizaciones al mes y un 30% cae en spam, son seis oportunidades que se pierden sin que nadie te diga que nunca leyó tu correo. No te llega un rechazo, te llega el silencio, y el silencio se confunde fácilmente con desinterés.</p>
+
+  <p>Arreglar la autenticación de un dominio es un trabajo de una vez, de unas pocas horas. Comparado con seis cotizaciones mensuales perdidas, es la inversión con mejor retorno que vas a hacer en tu operación digital.</p>
+
+  <hr>
+
+  <h2>Artículos relacionados</h2>
+
+  <ul>
+    <li><a href="correo-corporativo-con-dominio-propio.html">Cómo tener correo corporativo con tu propio dominio</a> — qué proveedor elegir y cómo dejarlo configurado.</li>
+    <li><a href="cuanto-cuesta-una-pagina-web-en-chile.html">¿Cuánto cuesta una página web en Chile?</a> — rangos reales por tipo de proyecto.</li>
+  </ul>
+
+  <div class="cta">
+    <h2>Te lo dejo funcionando</h2>
+    <p>Reviso tu dominio, configuro SPF, DKIM y DMARC, corrijo el formulario de tu web y valido que tus correos lleguen a la bandeja principal. Tú no tienes que entrar a ningún panel.</p>
+    <a class="btn" href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20mis%20correos%20est%C3%A1n%20llegando%20a%20spam%20y%20necesito%20ayuda" rel="noopener" target="_blank">Quiero arreglar mis correos</a>
+    <p class="fine">+56 9 4961 6038 — respondo en menos de 2 horas. También puedes ver <a href="/servicios.html">todos los servicios</a>.</p>
+  </div>
+
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "¿Por qué mis correos llegan a spam? Causas y solución real",
+  "description": "La causa técnica detrás de los correos que caen en spam: SPF, DKIM y DMARC. Cómo revisarlos, las otras causas frecuentes y los pasos para arreglarlo.",
+  "inLanguage": "es-CL",
+  "datePublished": "2026-09-08",
+  "dateModified": "2026-09-08",
+  "image": "https://www.pabloencina.cl/assets/og-image.png",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.pabloencina.cl/por-que-mis-correos-llegan-a-spam.html"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Pablo Encina",
+    "url": "https://www.pabloencina.cl/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pablo Encina",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.pabloencina.cl/assets/logo-horizontal-oscuro.png"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.pabloencina.cl/" },
+    { "@type": "ListItem", "position": 2, "name": "¿Por qué mis correos llegan a spam?", "item": "https://www.pabloencina.cl/por-que-mis-correos-llegan-a-spam.html" }
+  ]
+}
+</script>
+
+</body>
+</html>

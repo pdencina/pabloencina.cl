@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Archivos de trabajo, no son paginas del sitio
+Disallow: /jsonld-pabloencina.html
+Disallow: /checklist-seo.md
+
 Sitemap: https://www.pabloencina.cl/sitemap.xml
