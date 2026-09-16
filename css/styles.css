@@ -1580,3 +1580,15 @@ section[id] { scroll-margin-top: 100px; }
   .card-span-2 { grid-column: span 1; }
   .card-span-2 .service-detail-features { grid-template-columns: 1fr; }
 }
+
+/* ===== ENLACE EN TARJETA CREA TU ===== */
+.create-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #60A5FA;
+  transition: color 0.2s;
+}
+
+.create-link:hover { color: #93c5fd; }
