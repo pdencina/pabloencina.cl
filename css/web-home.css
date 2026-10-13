@@ -1,10 +1,10 @@
 /* Homepage: a clear path from business goal to proposal. */
 .web-home section[id], .web-home article[id] { scroll-margin-top: 100px; }
-.web-home .hero { min-height: auto; padding: 160px 24px 50px; }
+.web-home .hero { min-height: auto; padding: 120px 24px 36px; }
 .web-home .hero-content { max-width: 1040px; }
 .web-home .hero h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.08; letter-spacing: -.055em; }
-.web-home .hero .subtitle { max-width: 730px; margin: 28px auto; }
-.hero-price { display: flex; flex-direction: column; gap: 4px; margin: 28px 0; color: #a1a1aa; font-size: .85rem; }
+.web-home .hero .subtitle { max-width: 730px; margin: 18px auto; }
+.hero-price { display: flex; flex-direction: column; gap: 4px; margin: 18px 0; color: #a1a1aa; font-size: .85rem; }
 .hero-price strong { color: #fff; font-size: 2.4rem; letter-spacing: -.04em; }
 .hero-price small { font-size: .8rem; color: #a1a1aa; letter-spacing: 0; }
 .web-preview { margin: 58px auto 0; max-width: 850px; text-align: left; border: 1px solid #3f3f46; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 90px #0006; }
@@ -38,7 +38,7 @@
 .web-home [data-aos] { opacity: 1 !important; transform: none !important; }
 .web-home a:focus-visible, .web-home button:focus-visible, .web-home summary:focus-visible { outline: 3px solid #c4b5fd; outline-offset: 5px; }
 @media (max-width: 640px) {
-  .web-home .hero { padding-top: 125px; }
+  .web-home .hero { padding-top: 100px; }
   .goal-grid, .plan-grid, .preview-content { grid-template-columns: 1fr; }
   .preview-content { padding: 26px; gap: 24px; }
   .preview-product { border-radius: 14px; }
