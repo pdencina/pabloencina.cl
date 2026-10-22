@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Falla crítica de PHP (PHP2Shell): ¿Tu WordPress está en riesgo? | Pablo Encina</title>
+<meta name="description" content="Una falla de PHP con gravedad 9,2/10 permite tomar el control de webs WordPress, WooCommerce, PrestaShop, Joomla y Magento. Cómo saber si te afecta, qué versión necesitas y cómo dejar de depender de PHP.">
+<link rel="canonical" href="https://www.pabloencina.cl/alerta-php-wordpress.html">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Pablo Encina">
+<meta name="theme-color" content="#0A0A0B">
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Pablo Encina">
+<meta property="og:url" content="https://www.pabloencina.cl/alerta-php-wordpress.html">
+<meta property="og:title" content="¿Tu web es WordPress? Hoy toca actualizar PHP">
+<meta property="og:description" content="Falla crítica de PHP con gravedad 9,2/10. Cómo revisar tu versión en 2 minutos y qué hacer si tu hosting no actualiza.">
+<meta property="og:image" content="https://www.pabloencina.cl/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo sé si mi WordPress está afectado por la falla de PHP?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Entra al panel de WordPress, ve a Herramientas → Salud del sitio → Información → Servidor y mira la versión de PHP. Si no es 8.5.12, 8.4.27, 8.3.36, 8.2.35 o superior dentro de su rama, tu web está expuesta. Si es 8.1 o anterior, no existe parche y debes subir de versión."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Actualizar WordPress o los plugins soluciona la falla?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. La falla está en PHP, el lenguaje que corre en el servidor, no en WordPress. La actualización la hace tu hosting o quien administra el servidor. Actualizar WordPress y plugins sigue siendo recomendable, pero no corrige este problema."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Una web estática está afectada?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. Una web estática entrega archivos HTML, CSS y JavaScript ya construidos y no ejecuta PHP en el servidor, así que esta falla no la alcanza. Tampoco tiene plugins ni panel de administración expuesto."}
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo migrar mi WordPress sin perder contenido ni posicionamiento en Google?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Sí. Se traspasan los textos, imágenes y direcciones de cada página, se mantiene el dominio y se configuran redirecciones donde cambie una URL, para que Google y tus clientes no noten el cambio salvo por la velocidad."}
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0A0A0B;
+    --surface:#131316;
+    --line:#26262B;
+    --text:#E8E8EA;
+    --muted:#9A9AA3;
+    --accent:#F5B94A;
+    --accent-soft:rgba(245,185,74,.10);
+    --max:68ch;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;
+    font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:48px 22px 90px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+  .back{color:var(--muted);font-size:15px}
+  .badge{
+    display:flex;width:fit-content;align-items:center;gap:10px;margin-top:28px;padding:7px 14px;
+    border:1px solid rgba(245,185,74,.35);border-radius:999px;background:var(--accent-soft);
+    color:var(--accent);font:600 12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;
+  }
+  .badge::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+  h1{font-size:clamp(28px,6vw,42px);line-height:1.15;letter-spacing:-.02em;margin:20px 0 14px;font-weight:700}
+  h1 mark{background:var(--accent);color:#0A0A0B;padding:0 .15em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  h2{font-size:clamp(21px,4.4vw,27px);line-height:1.25;letter-spacing:-.01em;margin:52px 0 14px;font-weight:650}
+  h3{font-size:19px;margin:32px 0 8px;font-weight:600}
+  p{margin:0 0 18px}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:34px}
+  .lead{font-size:19px;color:#C9C9D0}
+
+  .versions{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 22px;padding:0;list-style:none}
+  .versions li{margin:0;padding:8px 16px;border-radius:8px;background:var(--accent);color:#0A0A0B;font:700 17px/1.3 ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  ol,ul{padding-left:22px;margin:0 0 18px}
+  li{margin-bottom:9px}
+
+  blockquote{
+    margin:26px 0;padding:16px 20px;border-left:3px solid var(--accent);
+    background:var(--accent-soft);color:#D6D6DC;border-radius:0 6px 6px 0;
+  }
+  blockquote p{margin:0}
+
+  table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15.5px}
+  th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--muted);font-weight:600;font-size:14px}
+
+  .offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}
+  .offer{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column}
+  .offer.featured{border-color:#a78bfa}
+  .offer h3{margin:4px 0 8px}
+  .offer p{color:#C9C9D0;font-size:15.5px;flex:1}
+  .offer small{color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+  @media (max-width:640px){.offers{grid-template-columns:1fr}}
+
+  .cta{
+    margin:56px 0 0;padding:28px 24px;background:var(--surface);
+    border:1px solid var(--line);border-radius:12px;
+  }
+  .cta h2{margin-top:0}
+  .btn{
+    display:inline-block;margin-top:6px;padding:14px 24px;border-radius:8px;
+    background:var(--accent);color:#0A0A0B;font-weight:650;text-decoration:none;text-align:center;
+  }
+  .btn.alt{background:transparent;color:var(--text);border:1px solid #a78bfa}
+  .btn:hover{text-decoration:none;filter:brightness(1.08)}
+  .fine{color:var(--muted);font-size:14px;margin:14px 0 0}
+  .sources{font-size:14px;color:var(--muted)}
+  .sources li{margin-bottom:4px}
+
+  hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJT28ZRC3P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PJT28ZRC3P');
+  </script>
+</head>
+<body>
+<article class="wrap">
+
+  <a class="back" href="/">← Volver al inicio</a>
+
+  <span class="badge">Novedad · Seguridad web · 21 oct 2026</span>
+
+  <h1>¿Tu web es WordPress? <mark>Hoy toca actualizar.</mark></h1>
+
+  <p class="meta">Actualizado el 22 de octubre de 2026 — 4 minutos de lectura</p>
+
+  <p class="lead">El 21 de octubre se publicaron parches para dos fallas críticas en PHP, el lenguaje que hace funcionar WordPress y la mayoría de las tiendas online. Permiten que un atacante <strong>tome el control de tu web</strong> sin usuario ni contraseña. Gravedad: <strong>9,2 sobre 10</strong>. Si nadie ha tocado tu servidor esta semana, tu web probablemente sigue expuesta.</p>
+
+  <h2>Qué pasó, sin tecnicismos</h2>
+
+  <p>Las fallas se conocen como <strong>PHP2Shell</strong> (CVE-2026-109618 y CVE-2026-109619). No están en WordPress ni en un plugin: están en PHP, el programa que corre en el servidor cada vez que alguien visita tu página. Por eso afectan a cualquier sitio que funcione con PHP, sin importar qué tan bien cuidados estén sus plugins.</p>
+
+  <p>Que un atacante "tome el control" significa que puede cambiar tu contenido, instalar páginas falsas para estafar a tus clientes, robar los datos de tu formulario o de tu tienda, o usar tu servidor para enviar spam y dejar tu dominio en listas negras.</p>
+
+  <h2>¿Te afecta?</h2>
+
+  <p>Sí, si tu web usa <strong>WordPress, WooCommerce, PrestaShop, Joomla o Magento</strong> (o cualquier sistema hecho en PHP) y nadie ha actualizado PHP desde el 21 de octubre.</p>
+
+  <h2>Qué hacer hoy</h2>
+
+  <ol>
+    <li><strong>Mira tu versión.</strong> En el panel de WordPress: Herramientas → Salud del sitio → Información → Servidor.</li>
+    <li><strong>Compárala con estas.</strong> Si no tienes una de estas versiones (o una más nueva de la misma rama), pide a tu hosting que actualice PHP:
+      <ul class="versions" aria-label="Versiones de PHP corregidas">
+        <li>8.5.12</li><li>8.4.27</li><li>8.3.36</li><li>8.2.35</li>
+      </ul>
+    </li>
+    <li><strong>¿Tienes 8.1 o anterior?</strong> Esas versiones ya no reciben parches. Toca subir de versión, y eso a veces rompe plugins o temas antiguos: conviene hacerlo con respaldo y revisando el sitio después.</li>
+  </ol>
+
+  <blockquote>
+    <p>Actualizar WordPress o sus plugins <strong>no</strong> corrige esta falla. La actualización es de PHP, en el servidor. Si tu hosting usa paquetes de Linux, el número de versión puede no cambiar aunque ya esté parchado: pregunta directamente si aplicaron el parche de CVE-2026-109618 y CVE-2026-109619.</p>
+  </blockquote>
+
+  <h2>Mientras tanto, mi web estática</h2>
+
+  <p>Mi sitio y los de varios clientes son webs estáticas: archivos ya construidos que el servidor solo entrega, sin ejecutar PHP ni tener un panel de administración expuesto. Esta semana no tuvimos que hacer nada. Tampoco la anterior, cuando salió la actualización de algún plugin, ni la próxima.</p>
+
+  <table>
+    <thead>
+      <tr><th></th><th>WordPress típico</th><th>Web estática o a medida</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Depende de PHP</td><td>Sí, en cada visita</td><td>No</td></tr>
+      <tr><td>Plugins que actualizar</td><td>Varios, todo el año</td><td>Ninguno</td></tr>
+      <tr><td>Panel de login expuesto</td><td>Sí (/wp-admin)</td><td>No</td></tr>
+      <tr><td>Velocidad de carga</td><td>Depende del hosting y plugins</td><td>Muy rápida, sirve desde CDN</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Cómo te puedo ayudar</h2>
+
+  <div class="offers">
+    <div class="offer">
+      <small>Hoy · urgente</small>
+      <h3>Parche de emergencia</h3>
+      <p>Reviso tu versión de PHP, respaldo la web, coordino o aplico la actualización con tu hosting y compruebo que formularios, tienda y correos sigan funcionando.</p>
+      <a class="btn" href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20mi%20web%20es%20WordPress%20y%20quiero%20revisar%20si%20me%20afecta%20la%20falla%20de%20PHP.%20Mi%20sitio%20es%3A%20" target="_blank" rel="noopener">Revisar mi web ahora</a>
+    </div>
+    <div class="offer featured">
+      <small>Para no volver a pasar por esto</small>
+      <h3>Migra a una web sin PHP</h3>
+      <p>Paso tu WordPress a una web estática o a código propio. Mismo dominio y contenido, redirecciones para no perder Google y sin mantenimiento de plugins.</p>
+      <a class="btn alt" href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20quiero%20migrar%20mi%20web%20WordPress%20a%20una%20web%20sin%20PHP.%20Mi%20sitio%20es%3A%20" target="_blank" rel="noopener">Quiero dejar WordPress</a>
+    </div>
+  </div>
+
+  <p>¿Tienes una tienda en WooCommerce o PrestaShop? Una tienda necesita un servidor, pero no necesita PHP ni plugins de terceros. Te cotizo una tienda a medida con pagos chilenos y te explico qué conviene según tu volumen de ventas. Más detalles en <a href="cuanto-cuesta-una-pagina-web-en-chile.html">cuánto cuesta una página web en Chile</a>.</p>
+
+  <h2>Preguntas frecuentes</h2>
+
+  <h3>¿Actualizar WordPress o los plugins soluciona la falla?</h3>
+  <p>No. La falla está en PHP, en el servidor. La actualización la hace tu hosting o quien administra el servidor.</p>
+
+  <h3>¿Una web estática está afectada?</h3>
+  <p>No. Una web estática no ejecuta PHP en el servidor, así que esta falla no la alcanza.</p>
+
+  <h3>¿Puedo migrar sin perder contenido ni posicionamiento en Google?</h3>
+  <p>Sí. Se traspasan textos, imágenes y direcciones de cada página, se mantiene el dominio y se configuran redirecciones donde cambie una URL.</p>
+
+  <div class="cta">
+    <h2>¿No sabes qué versión tienes?</h2>
+    <p>Mándame la dirección de tu web por WhatsApp y te digo si está expuesta y qué conviene hacer: parchar hoy, migrar después o ambas.</p>
+    <a class="btn" href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20%C2%BFme%20puedes%20decir%20si%20mi%20web%20est%C3%A1%20afectada%20por%20la%20falla%20de%20PHP%3F%20Mi%20sitio%20es%3A%20" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <p class="fine">+56 9 4961 6038 · Atención directa con Pablo</p>
+  </div>
+
+  <hr>
+
+  <p class="sources">Fuentes:</p>
+  <ul class="sources">
+    <li><a href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/" target="_blank" rel="noopener">The PHP Foundation — Today's PHP Security Release</a></li>
+    <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching" target="_blank" rel="noopener">CISA — Critical Vulnerabilities in PHP Require Immediate Patching</a></li>
+    <li><a href="https://cert.europa.eu/publications/security-advisories/2026-018/" target="_blank" rel="noopener">CERT-EU — Critical Vulnerabilities in PHP</a></li>
+  </ul>
+
+</article>
+</body>
+</html>

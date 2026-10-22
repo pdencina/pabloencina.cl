@@ -162,7 +162,7 @@
       "name": "¿Usas WordPress o plantillas prefabricadas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Todo lo construyo con código propio usando React, Next.js, Node.js y PostgreSQL. Eso significa que tu web carga más rápido, es más segura y puede crecer sin límites de plugins ni licencias mensuales."
+        "text": "No. Todo lo construyo con código propio usando React, Next.js, Node.js y PostgreSQL, o como web estática cuando no necesitas más. Eso significa que tu web carga más rápido, es más segura y puede crecer sin límites de plugins ni licencias mensuales. Por ejemplo, la falla crítica de PHP de octubre de 2026 obligó a actualizar de urgencia todos los sitios WordPress; una web estática no ejecuta PHP, así que no estaba expuesta."
       }
     },
     {
@@ -262,6 +262,9 @@
 <a href="index.html" class="active">Inicio</a>
 </li>
         <li>
+<a href="#alerta-php">Alerta PHP</a>
+</li>
+        <li>
 <a href="#portafolio">Proyectos</a>
 </li>
         <li>
@@ -307,6 +310,49 @@
 </section>
 
   <div class="page">
+
+    <!-- Alerta PHP / WordPress -->
+    <section class="section alert-php" id="alerta-php" aria-labelledby="alerta-php-titulo">
+      <span class="alert-badge"><span class="alert-dot"></span> Alerta de seguridad · 21 oct 2026</span>
+      <h2 id="alerta-php-titulo">¿Tu web es WordPress? <mark>Hoy toca actualizar.</mark></h2>
+      <div class="alert-meme">
+        <figure>
+          <figcaption>Quien tiene WordPress, hoy</figcaption>
+          <div class="alert-meme-panel is-panic" aria-hidden="true"><span>😰</span><small>actualizando PHP a las 3 AM</small></div>
+        </figure>
+        <figure>
+          <figcaption>Yo, durmiendo con mi web estática</figcaption>
+          <div class="alert-meme-panel is-calm" aria-hidden="true"><span>😴</span><small>sin PHP · sin plugins · sin sustos</small></div>
+        </figure>
+      </div>
+      <div class="alert-info">
+        <article class="alert-card is-dark">
+          <span class="alert-label">Qué pasó</span>
+          <p>Un fallo en <strong>PHP</strong>, el lenguaje que hace funcionar WordPress, permite que un atacante <strong>tome el control de tu web</strong> sin necesidad de contraseña. Gravedad: <strong>9,2 sobre 10</strong>.</p>
+        </article>
+        <article class="alert-card">
+          <span class="alert-label">¿Te afecta?</span>
+          <p>Sí, si tu web usa <strong>WordPress, WooCommerce, PrestaShop, Joomla o Magento</strong> y nadie actualizó PHP a 8.5.12, 8.4.27, 8.3.36 o 8.2.35. Con PHP 8.1 o anterior no hay parche: toca subir de versión.</p>
+        </article>
+      </div>
+      <div class="alert-offers">
+        <article class="alert-offer">
+          <span class="plan-tag">Hoy · urgente</span>
+          <h3>Parche de emergencia</h3>
+          <p>Reviso tu versión de PHP, coordino o aplico la actualización con tu hosting, respaldo la web antes y compruebo que todo siga funcionando después.</p>
+          <a class="btn-primary" href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20mi%20web%20es%20WordPress%20y%20quiero%20revisar%20si%20me%20afecta%20la%20falla%20de%20PHP.%20Mi%20sitio%20es%3A%20" target="_blank" rel="noopener">Revisar mi web ahora ↗</a>
+        </article>
+        <article class="alert-offer is-featured">
+          <span class="plan-tag">Para no volver a pasar por esto</span>
+          <h3>Migra a una web sin PHP</h3>
+          <p>Paso tu sitio WordPress a una web estática o a código propio: mismo contenido y dominio, carga más rápida y sin plugins ni versiones de PHP que parchar cada mes.</p>
+          <a class="btn-secondary" href="https://wa.me/56949616038?text=Hola%20Pablo%2C%20quiero%20migrar%20mi%20web%20WordPress%20a%20una%20web%20sin%20PHP.%20Mi%20sitio%20es%3A%20" target="_blank" rel="noopener">Quiero dejar WordPress ↗</a>
+        </article>
+      </div>
+      <p class="alert-more">Cómo revisarlo tú mismo en 2 minutos y qué hacer según tu versión: <a href="alerta-php-wordpress.html">guía de la falla de PHP (PHP2Shell) →</a></p>
+    </section>
+
+    <hr class="divider">
 
     <!-- Portfolio -->
     <section class="section" id="portafolio" data-aos="fade-up">
@@ -663,7 +709,7 @@
 
         <details class="faq-item" data-aos="fade-up">
           <summary>¿Usas WordPress o plantillas prefabricadas?</summary>
-          <p>No. Todo lo construyo con código propio usando React, Next.js, Node.js y PostgreSQL. Eso significa que tu web carga más rápido, es más segura y puede crecer sin límites de plugins ni licencias mensuales.</p>
+          <p>No. Todo lo construyo con código propio usando React, Next.js, Node.js y PostgreSQL, o como web estática cuando no necesitas más. Eso significa que tu web carga más rápido, es más segura y puede crecer sin límites de plugins ni licencias mensuales. Por ejemplo, la falla crítica de PHP de octubre de 2026 obligó a actualizar de urgencia todos los sitios WordPress; una web estática no ejecuta PHP, así que no estaba expuesta.</p>
         </details>
 
         <details class="faq-item" data-aos="fade-up">
@@ -762,6 +808,7 @@
           <a href="cuanto-cuesta-una-pagina-web-en-chile.html">¿Cuánto cuesta una web?</a>
           <a href="por-que-mis-correos-llegan-a-spam.html">Correos que caen en spam</a>
           <a href="correo-corporativo-con-dominio-propio.html">Correo con dominio propio</a>
+          <a href="alerta-php-wordpress.html">Alerta PHP en WordPress</a>
         </div>
       </div>
       <div class="footer-bottom">
