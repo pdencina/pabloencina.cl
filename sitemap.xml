@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://www.pabloencina.cl/crear-pagina-web.html</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -32,13 +32,13 @@
   </url>
   <url>
     <loc>https://www.pabloencina.cl/por-que-mis-correos-llegan-a-spam.html</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.pabloencina.cl/correo-corporativo-con-dominio-propio.html</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -65,5 +65,11 @@
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.pabloencina.cl/pagina-web-para-clinicas-dentales.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
